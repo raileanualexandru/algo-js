@@ -20,16 +20,16 @@ var obj1 = new askTvSerie;
 console.log(JSON.stringify(obj1));
 
 // exercise 5.2
+var castArray = Object.values(obj1.castMembers);
+
+
+
+
 function randomizeCast(tvSerie) {
-  for(let i = tvSerie.length - 1; i > 0 ; i--){
-      let j = Math.floor(Math.random()*(i+1));
-      var temp = tvSerie[i];
-      tvSerie[i] = tvSerie[j];
-      tvSerie[j] = temp;
-  }
-  return tvSerie;
+    tvSerie.sort(() => Math.random() - 0.5);
 }
 
-let castArray = Object.values(obj1.castMembers);
+randomizeCast(castArray);
 
-console.log(randomizeCast(JSON.stringify(castArray)));
+console.log(JSON.stringify(castArray));
+
